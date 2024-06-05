@@ -1,13 +1,15 @@
-import { useState, Suspense } from 'react';
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Island from '../models/Island';
 import Sky from '../models/Sky'; 
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
+import HomeInfo from '../components/HomeInfo';
 
 const Home = () => {
   const [isRotate, setIsRotate] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1)
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -40,8 +42,11 @@ const Home = () => {
   const { planeScale, planePosition } = adjustPlaneForScreenSize();
 
   return (
+    console.log(currentStage),
     <section className="w-full h-screen relative">
-
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+        {currentStage && <HomeInfo currentStage={currentStage}/>}
+      </div>
       <Canvas className={`w-full h-full bg-transparent ${isRotate ? 'cursor-grabbing' : 'cursor-grab'}`}
        camera={{ near: 0.1, far: 1000}}>
         
@@ -66,13 +71,16 @@ const Home = () => {
             intensity={0.5}
           />
           <Bird />
-          <Sky />
+          <Sky 
+            isRotate={isRotate}
+          />
           <Island 
-            scale={screenScale}
-            position={screenPosition}
-            rotation={rotation}
             isRotate={isRotate}
             setIsRotate={setIsRotate}
+            setCurrentStage={setCurrentStage}
+            position={screenPosition}
+            rotation={rotation}
+            scale={screenScale}
           />
           <Plane 
             isRotate={isRotate}

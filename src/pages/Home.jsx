@@ -37,12 +37,11 @@ const Home = () => {
     } else {
       screenScale = [1, 1, 1];
     }
-    return { screenScale, screenPosition, rotation };
+    return [ screenScale, screenPosition, rotation ];
   }
 
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
-    let rotation = [0.1, 4.7, 0];
 
     if (window.innerWidth < 768) {
       screenScale = [1.5, 1.5, 1.5];
@@ -54,7 +53,7 @@ const Home = () => {
     return [ screenScale, screenPosition ];
   }
 
-  const { screenScale, screenPosition, rotation } = adjustIslandForScreenSize();
+  const [ screenScale, screenPosition, rotation ] = adjustIslandForScreenSize();
   const [ planeScale, planePosition ] = adjustPlaneForScreenSize();
 
   return (

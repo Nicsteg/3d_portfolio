@@ -6,6 +6,7 @@ import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
+import sakura from '../assets/sakura.mp3';
 
 const Home = () => {
   const [isRotate, setIsRotate] = useState(false);
@@ -35,11 +36,11 @@ const Home = () => {
       screenScale = [3, 3, 3];
       screenPosition = [0, -4, -4];
     }
-    return { screenScale, screenPosition };
+    return [ screenScale, screenPosition ];
   }
 
   const { screenScale, screenPosition, rotation } = adjustIslandForScreenSize();
-  const { planeScale, planePosition } = adjustPlaneForScreenSize();
+  const [ planeScale, planePosition ] = adjustPlaneForScreenSize();
 
   return (
     console.log(currentStage),
@@ -85,7 +86,7 @@ const Home = () => {
           <Plane 
             isRotate={isRotate}
             scale={planeScale}
-            planePosition={planePosition}
+            position={planePosition}
             rotation={[0, 20, 0]}
           />
         </Suspense>

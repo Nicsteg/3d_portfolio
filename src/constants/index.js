@@ -33,16 +33,6 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
-    },
-    {
-        imageUrl: git,
-        name: "Git",
-        type: "Version Control",
-    },
-    {
         imageUrl: github,
         name: "GitHub",
         type: "Version Control",
@@ -63,16 +53,6 @@ export const skills = [
         type: "Database",
     },
     {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
         imageUrl: nextjs,
         name: "Next.js",
         type: "Frontend",
@@ -88,23 +68,8 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
-    },
-    {
-        imageUrl: sass,
-        name: "Sass",
-        type: "Frontend",
-    },
-    {
         imageUrl: tailwindcss,
         name: "Tailwind CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: typescript,
-        name: "TypeScript",
         type: "Frontend",
     }
 ];
@@ -166,24 +131,38 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: redux, // Assuming use of Redux in complex state management
+        iconUrl: react, // Assuming use of Redux in complex state management
+        theme: 'btn-back-green',
+        name: 'Voluntree',
+        description: 'Developed a website using Bootstrap-react and Meteor for the community of Hawaii to find volunteer oportunities.',
+        link: 'https://github.com/Team-Octagon/voluntree',
+    },
+    {
+        iconUrl: github, // Assuming use of Redux in complex state management
+        theme: 'btn-back-green',
+        name: 'VR-Health',
+        description: 'Developed a platform using Unity and C# to create a virtual reality mental health platform.',
+        link: 'https://github.com/VRHealth/VRHealth',
+    },
+    {
+        iconUrl: react, // Assuming use of Redux in complex state management
         theme: 'btn-back-green',
         name: 'Snack-Squad',
         description: 'Developed a website using Bootstrap-react and Meteor for the University of Hawaii community to find local food options.',
-        link: 'https://github.com/YourGitHubUsername/snack-squad',
+        link: 'https://github.com/snack-squad/snack-squad',
     },
     {
-        iconUrl: nextjs, // Assuming use of Next.js for server-side rendering
+        iconUrl: github, // Assuming use of Next.js for server-side rendering
         theme: 'btn-back-blue',
         name: 'PokeGUI',
         description: 'A Java-based GUI application representing a Pokemon species hierarchy.',
-        link: 'https://github.com/YourGitHubUsername/pokegui',
+        link: 'https://nicsteg.github.io/',
     },
     {
-        iconUrl: nodejs, // Assuming backend usage with Node.js
+        iconUrl: github, // Assuming backend usage with Node.js
         theme: 'btn-back-red',
         name: 'SHA-1 Project',
         description: 'Replicated a simple SHA-1 hash function in C++ to deepen understanding of cryptographic hashing.',
-        link: 'https://github.com/YourGitHubUsername/sha1-project',
+        link: 'https://github.com/Nicsteg/SHA-1-project',
     }
 ];
